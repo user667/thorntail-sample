@@ -1,5 +1,6 @@
 package ch.elmundi.rest;
 
+import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
@@ -9,22 +10,21 @@ import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-/**
- * Version health check that simply returns the value of property <code>version</code>.
- */
 @Health
 @ApplicationScoped
-public class VersionCheck implements HealthCheck {
+public class FullConfigCheck implements HealthCheck {
 
     @Inject
-    @ConfigProperty(name = "version")
-    private String versionNumber;
+    private Config config;
 
     public HealthCheckResponse call() {
         final HealthCheckResponseBuilder healthCheckResponseBuilder = HealthCheckResponse
-                .named("version-check")
-                .withData("version", versionNumber)
+                .named("full-config-check")
                 .up();
+
+        for (String propertyName : config.getPropertyNames()) {
+            healthCheckResponseBuilder.withData(propertyName, config.getValue(propertyName, String.class));
+        }
 
         return healthCheckResponseBuilder.build();
     }
