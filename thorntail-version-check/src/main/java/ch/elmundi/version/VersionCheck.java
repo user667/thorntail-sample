@@ -1,4 +1,4 @@
-package ch.elmundi.rest;
+package ch.elmundi.version;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.Health;

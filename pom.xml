@@ -7,7 +7,7 @@
     <groupId>ch.elmundi.thorntail</groupId>
     <artifactId>thorntail-sample-reactor</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,10 +18,25 @@
 
     <modules>
         <module>thorntail-sample</module>
+        <module>thorntail-sample-api</module>
+        <module>thorntail-version-check</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <!-- Dependencies to self -->
+            <dependency>
+                <groupId>ch.elmundi.thorntail</groupId>
+                <artifactId>thorntail-sample-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.elmundi.thorntail</groupId>
+                <artifactId>thorntail-version-check</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Thorntail BOM -->
             <dependency>
                 <groupId>io.thorntail</groupId>
                 <artifactId>bom</artifactId>
@@ -31,4 +46,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
