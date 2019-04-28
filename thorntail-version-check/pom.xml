@@ -6,6 +6,7 @@
         <artifactId>thorntail-sample-reactor</artifactId>
         <groupId>ch.elmundi.thorntail</groupId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -23,6 +24,22 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>microprofile-health</artifactId>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>arquillian</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

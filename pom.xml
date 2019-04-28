@@ -14,6 +14,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <version.thorntail>2.4.0.Final</version.thorntail>
+        <fluent-hc.version>4.5</fluent-hc.version>
+        <gson.version>2.8.5</gson.version>
     </properties>
 
     <modules>
@@ -43,6 +45,25 @@
                 <version>${version.thorntail}</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+
+            <!-- Testing -->
+            <dependency>
+                <groupId>io.thorntail</groupId>
+                <artifactId>arquillian</artifactId>
+                <version>${version.thorntail}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>fluent-hc</artifactId>
+                <version>${fluent-hc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
