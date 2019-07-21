@@ -18,7 +18,6 @@ public class CustomCountingMetric {
     @GET
     @Counted(name = "test-counter-counted",
             absolute = true,
-            monotonic = true,
             displayName = "hello get",
             description = "Monitor how many times helloGet method was called")
     @Timed(name = "test-counter-timed",
