@@ -56,12 +56,6 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>io.thorntail</groupId>
-                <artifactId>arquillian</artifactId>
-                <version>${version.thorntail}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>fluent-hc</artifactId>
                 <version>${fluent-hc.version}</version>
