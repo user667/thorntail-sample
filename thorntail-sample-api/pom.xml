@@ -17,5 +17,13 @@
             <groupId>io.thorntail</groupId>
             <artifactId>jaxrs</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+        </dependency>
     </dependencies>
 </project>

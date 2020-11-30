@@ -1,0 +1,5 @@
+
+thorntail:
+  swagger:
+    web-app:
+      context: /openapi

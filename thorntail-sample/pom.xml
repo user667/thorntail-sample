@@ -39,15 +39,43 @@
             <groupId>io.thorntail</groupId>
             <artifactId>microprofile-health</artifactId>
         </dependency>
-        <!-- https://github.com/eclipse/microprofile-config -->
-        <!-- https://github.com/thorntail/microprofile-config-wildfly -->
-        <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>microprofile-config</artifactId>
-        </dependency>
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>microprofile-metrics</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>microprofile-openapi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>swagger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>swagger-webapp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tamaya</groupId>
+            <artifactId>tamaya-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tamaya</groupId>
+            <artifactId>tamaya-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tamaya.ext</groupId>
+            <artifactId>tamaya-microprofile</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
         </dependency>
     </dependencies>
 

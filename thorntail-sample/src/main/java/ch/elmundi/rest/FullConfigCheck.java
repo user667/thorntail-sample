@@ -1,10 +1,10 @@
 package ch.elmundi.rest;
 
 import org.eclipse.microprofile.config.Config;
-import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
+import org.eclipse.microprofile.health.Liveness;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -12,7 +12,7 @@ import javax.inject.Inject;
 /**
  * Custom health check that adds a dump of the full config to the return payload.
  */
-@Health
+@Liveness
 @ApplicationScoped
 public class FullConfigCheck implements HealthCheck {
 
@@ -25,7 +25,7 @@ public class FullConfigCheck implements HealthCheck {
                 .up();
 
         for (String propertyName : config.getPropertyNames()) {
-            healthCheckResponseBuilder.withData(propertyName, config.getValue(propertyName, String.class));
+            healthCheckResponseBuilder.withData(propertyName, config.getOptionalValue(propertyName, String.class).orElse(""));
         }
 
         return healthCheckResponseBuilder.build();

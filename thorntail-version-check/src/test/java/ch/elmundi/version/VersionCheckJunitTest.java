@@ -2,7 +2,6 @@ package ch.elmundi.version;
 
 import io.smallrye.config.inject.ConfigExtension;
 import org.eclipse.microprofile.health.HealthCheck;
-import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.jboss.weld.junit5.WeldInitiator;
 import org.jboss.weld.junit5.WeldJunit5Extension;
 import org.jboss.weld.junit5.WeldSetup;

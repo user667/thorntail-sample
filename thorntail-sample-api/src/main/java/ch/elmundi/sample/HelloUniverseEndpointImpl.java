@@ -1,7 +1,5 @@
-package ch.elmundi.rest;
+package ch.elmundi.sample;
 
-import ch.elmundi.sample.HelloWorld;
-import ch.elmundi.sample.HelloWorldEndpoint;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -13,12 +11,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/hello")
+@Path("/hello2")
 @ApplicationScoped
 @OpenAPIDefinition(tags = {
-        @Tag(name = "Hello world service")
+        @Tag(name = "Hello universe service")
 })
-public class HelloWorldEndpointImpl implements HelloWorldEndpoint {
+public class HelloUniverseEndpointImpl implements HelloWorldEndpoint {
 
     @GET
     @Override
